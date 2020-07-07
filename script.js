@@ -701,3 +701,170 @@ var finalValue = [tips[0] + bill[0], tips[1] + bill[1], tips[2] + bill[2]];
 console.log(tips);
 console.log(finalValue);
 */
+
+//*OBJECT AND PROPERTIES
+/* 
+
+var mj = {
+    firstName: 'Michael',
+    lastName: 'Carnaje',
+    birthYear: 2003,
+    family: ['Mark', 'Bob', 'Jane'],
+    job: 'none',
+    isSingle: true,
+};
+console.log(mj.job); //!
+console.log(mj['lastName']); //!
+var x = 'birthYear';
+console.log(mj[x]); //!
+
+*/
+//!MUTATED
+/* 
+
+mj.job = 'sofware enginner;';
+mj['isSingle'] = false;
+console.log(mj);
+
+
+var jane = new Object();  //ANOTHER WAY - NEW OBJECT SYNTAX
+jane.firstName = 'Jane';
+jane.birthYear = 1969;
+jane['lastName'] = 'Smith';
+console.log(jane);
+
+*/
+//*OBJECT AND METHODS
+//methods attached to object
+//only objects have method
+//arrays are actually object
+/* 
+var mj = {
+    firstName: 'Michael',
+    lastName: 'Carnaje',
+    birthYear: 2003,
+    family: ['Mark', 'Bob', 'Jane'],
+    job: 'none',
+    isSingle: true,
+    calcAge: function (birthYear) {
+        return 2020 - birthYear;
+    },
+};
+
+console.log(mj.calcAge(2003));
+
+ */ //!!M E T H O D - T H I S!
+
+/* 
+
+var mj = {
+    firstName: 'Michael',
+    lastName: 'Carnaje',
+    birthYear: 2003,
+    family: ['Mark', 'Bob', 'Jane'],
+    job: 'none',
+    isSingle: true,
+    calcAge: function () {
+        //return 2020 - this.birthYear;
+        this.age = 2020 - this.birthYear; //!EASIEST WAY TO STORE THE RESULTS OF THE FUNCTION
+    },
+};
+
+mj.calcAge(); //CALL THE FUNCTION
+console.log(mj);
+
+*/
+/* 
+var age = mj.calcAge(); //!STORE THE FUNCTION FIRST METHOS
+mj.age = mj.calcAge(); 
+
+mj.age = mj.calcAge(); //!EASIER WAY O STORE THE RESULTS OF THE FUNCTION
+
+*/
+//? CODING CHALLENGE 4
+/*
+
+Let's remember the first coding challenge where Mark and John compared their BMIs. Let's now implement the same functionality with objects and methods.
+1. For each of them, create an object with properties for their full name, mass, and height
+2. Then, add a method to each object to calculate the BMI. Save the BMI to the object and also return it from the method.
+3. In the end, log to the console who has the highest BMI, together with the full name and the respective BMI. Don't forget they might have the same BMI.
+Remember: BMI = mass / height^2 = mass / (height * height). (mass in kg and height in meter).
+GOOD LUCK 😀
+
+*/
+
+// TODO: CODING CHALLENGE 4 - MY ANSWER
+/* 
+var seo = {
+    firstName: 'Jang Hoon',
+    lastName: 'Seo',
+    mass: 116,
+    height: 2.06,
+    calcBMI: function () {
+        this.BMI = this.mass / (this.height * this.height);
+    },
+};
+var lee = {
+    firstName: 'Soo Geun',
+    lastName: 'Lee',
+    mass: 32,
+    height: 1.65,
+    calcBMI: function () {
+        this.BMI = this.mass / (this.height * this.height);
+    },
+};
+seo.calcBMI();
+lee.calcBMI();
+
+if (lee.BMI > seo.BMI) {
+    console.log(
+        lee.lastName +
+            ' ' +
+            lee.firstName +
+            ' has the higher BMI than Seo Jang Hoon ' +
+            lee.BMI
+    );
+} else if (lee.BMI < seo.BMI) {
+    console.log(
+        seo.lastName +
+            ' ' +
+            seo.firstName +
+            ' has the higher BMI than Lee Soo Geun ' +
+            seo.BMI
+    );
+} else {
+    console.log('They have the same BMI.');
+}
+*/
+// TODO: CODING CHALLENGE 4 - SOLUTION //!!!!!!!!!!!!!!! D R Y - RETURN NAYS!
+
+var seo = {
+    fullName: 'Seo Jang Hoon',
+    mass: 116,
+    height: 2.06,
+    calcBMI: function () {
+        this.bmi = this.mass / (this.height * this.height);
+        return this.bmi;
+    },
+};
+var lee = {
+    fullName: 'Lee Soo Geun',
+    mass: 32,
+    height: 1.65,
+    calcBMI: function () {
+        this.bmi = this.mass / (this.height * this.height);
+        return this.bmi;
+    },
+};
+
+if (lee.calcBMI() > seo.calcBMI()) {
+    console.log(
+        lee.fullName + ' has the higher BMI than Seo Jang Hoon ' + lee.bmi
+    );
+} else if (lee.bmi < seo.bmi) {
+    console.log(
+        seo.fullName + ' has the higher BMI than Lee Soo Geun ' + seo.bmi
+    );
+} else {
+    console.log('They have the same BMI.');
+}
