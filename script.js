@@ -836,8 +836,8 @@ if (lee.BMI > seo.BMI) {
     console.log('They have the same BMI.');
 }
 */
-// TODO: CODING CHALLENGE 4 - SOLUTION //!!!!!!!!!!!!!!! D R Y - RETURN NAYS!
-
+// TODO: CODING CHALLENGE 4 - SOLUTION //!!!!!!!!!!!!!!! D R Y - RETURN
+/* 
 var seo = {
     fullName: 'Seo Jang Hoon',
     mass: 116,
@@ -867,4 +867,23 @@ if (lee.calcBMI() > seo.calcBMI()) {
     );
 } else {
     console.log('They have the same BMI.');
+}
+ */
+//*FUNCTION AND ITERATION
+
+for (var i = 0; i < 10; i++) {
+    console.log(i);
+}
+// i = 0, 0 < 10 true, log i to console, i++'
+// i = 1, 1 < 10 true, log i to console, i++'
+
+//! 3 PARTS
+//initial value of the counter;
+// the condition that is evaluated before each loop iteration;
+//a counter update after each iteration;
+
+var mj = ['Michael', 'Carnaje', 2003, 'future software developer'];
+
+for (var i = 0; i < mj.length; i++) {
+    console.log(mj[i]);
 }
