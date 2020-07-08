@@ -736,7 +736,7 @@ console.log(jane);
 */
 //*OBJECT AND METHODS
 //methods attached to object
-//only objects have method
+//!only objects have method
 //arrays are actually object
 /* 
 var mj = {
@@ -770,7 +770,7 @@ var mj = {
     },
 };
 
-mj.calcAge(); //CALL THE FUNCTION
+mj.calcAge(); //todo CALL THE FUNCTION
 console.log(mj);
 
 */
@@ -844,7 +844,7 @@ var seo = {
     height: 2.06,
     calcBMI: function () {
         this.bmi = this.mass / (this.height * this.height);
-        return this.bmi;
+        return this.bmi; //todo we need to return so that we can call it directly in the if and else statement;
     },
 };
 var lee = {
@@ -890,6 +890,7 @@ for (var i = 0; i < mj.length; i++) {
 }
 //we only have the conditio
 //! WHILE LOOP
+//todo condition only
 var i = 0;
 while (i < mj.length) {
     console.log(mj[i]);
@@ -943,7 +944,6 @@ var mj = {
     bills: [124, 48, 268, 180, 42],
     tips: [],
     finalAmount: [],
-    average: [],
     calcTips: function () {
         for (var i = 0; i < this.bills.length; i++) {
             var percentage;
@@ -1035,9 +1035,6 @@ function calcAverage(tips) {
 mark.calcTips();
 john.calcTips();
 console.log(mark, john);
-
-john.calcTips();
-mark.calcTips();
 john.average = calcAverage(john.tips);
 mark.average = calcAverage(mark.tips);
 
